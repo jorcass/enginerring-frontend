@@ -1,5 +1,6 @@
 package com.challenge;
 
+import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
@@ -11,5 +12,12 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "Challenge";
+  }
+  /**
+  * As per documentation in reactnavigation.org
+   */
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 }
