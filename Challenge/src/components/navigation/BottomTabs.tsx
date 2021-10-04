@@ -1,6 +1,6 @@
 import React from 'react';
-import {Image} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { Image } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import CurrencyScreen from '../screens/currencyScreen';
 import PieScreen from '../screens/pieScreen';
@@ -21,16 +21,16 @@ import {
   pieIcon,
 } from '../assets/icons';
 
-const {Navigator, Screen} = createBottomTabNavigator();
+const { Navigator, Screen } = createBottomTabNavigator();
 
-const TabIcon = (props: {color: string; source: any}) => {
+const TabIcon = (props: { color: string; source: any }) => {
   return <Image {...props} />;
 };
 
-const getTabOption = (props: {icon: any; focusedIcon: any}) => ({
+const getTabOption = (props: { icon: any; focusedIcon: any }) => ({
   headerShown: false,
   tabBarShowLabel: false,
-  tabBarIcon: (iconProps: {color: any; focused: boolean}) => (
+  tabBarIcon: (iconProps: { color: any; focused: boolean }) => (
     <TabIcon
       source={iconProps.focused ? props.focusedIcon : props.icon}
       color={iconProps.color}
@@ -44,7 +44,7 @@ const BottomTabs = () => {
       <Screen
         name="Pie"
         component={PieScreen}
-        options={getTabOption({icon: pieIcon, focusedIcon: pieFocusedIcon})}
+        options={getTabOption({ icon: pieIcon, focusedIcon: pieFocusedIcon })}
       />
       <Screen
         name="Currency"
@@ -65,12 +65,12 @@ const BottomTabs = () => {
       <Screen
         name="Bell"
         component={BellScreen}
-        options={getTabOption({icon: bellIcon, focusedIcon: bellFocusedIcon})}
+        options={getTabOption({ icon: bellIcon, focusedIcon: bellFocusedIcon })}
       />
       <Screen
         name="User"
         component={UserScreen}
-        options={getTabOption({icon: userIcon, focusedIcon: userFocusedIcon})}
+        options={getTabOption({ icon: userIcon, focusedIcon: userFocusedIcon })}
       />
     </Navigator>
   );
